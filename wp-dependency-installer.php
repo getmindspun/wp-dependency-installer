@@ -111,7 +111,7 @@ if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
 				2
 			);
 
-			new \WP_Dismiss_Notice();
+			new WP_Dismiss_Notice();
 		}
 
 		/**
@@ -780,7 +780,7 @@ if ( ! class_exists( 'WP_Dependency_Installer' ) ) {
 					$dependency  = dirname( $notice['slug'] );
 					$dismissible = empty( $timeout ) ? '' : sprintf( 'dependency-installer-%1$s-%2$s', esc_attr( $dependency ), esc_attr( $timeout ) );
 				}
-				if ( \WP_Dismiss_Notice::is_admin_notice_active( $dismissible ) ) {
+				if ( WP_Dismiss_Notice::is_admin_notice_active( $dismissible ) ) {
 					printf(
 						'<div class="%1$s" data-dismissible="%2$s"><p><strong>[%3$s]</strong> %4$s%5$s</p></div>',
 						esc_attr( $class ),
